@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<bean name="endereco" class="br.com.spring.beans.BeanEndereco">
+		<property name="descricao" value="Almerindo Alziro Paganini" />
+		<property name="numero" value="521" />
+		<property name="bairro" value="Jardim Popular" />
+	</bean>
+
+	<bean name="pessoa" scope="singleton" class="br.com.spring.beans.BeanPessoa">
+		<property name="nome" value="André Sigleton" />
+		<property name="fone" value="989084474" />
+		<property name="endereco" ref="endereco"/>
+	</bean>
+
+	<bean name="pessoa1" scope="prototype" class="br.com.spring.beans.BeanPessoa1">
+		<property name="nome" value="André Prototype" />
+		<property name="fone" value="989084474" />
+		<property name="endereco" ref="endereco"/>
+	</bean>
+</beans>
